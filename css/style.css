@@ -1,0 +1,27 @@
+@import './fonts.css';
+
+:root {
+  /* Colors */
+  --blue: rgb(52, 95, 246);
+  --gun-metal: rgb(37, 51, 71); 
+  --dark-electric-blue: rgb(94, 110, 133);
+  --pure-white: rgb(255, 255, 255);
+
+  /* Typography */
+  font-size: 16px;
+  --font-family: Inter, sans-serif;
+  --heading-XL: bold 4rem/110% var(--font-family);
+  --heading-L: bold 3rem/110% var(--font-family);
+  --heading-M: bold 1.5rem/110% var(--font-family);
+  --heading-S: bold 1.25/110% var(--font-family);
+  --body-M: normal 1rem/150% var(--font-family);
+  --body-M-bold: bold 1rem/150% var(--font-family);
+  --body-S: normal 0.875em/150% var(--font-family);
+}
+
+body {
+  font: var(--body-S);
+  font-weight: lighter;
+  color: var(--blue);
+  line-height: 150%;
+}
