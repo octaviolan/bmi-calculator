@@ -22,6 +22,5 @@
 body {
   font: var(--body-S);
   font-weight: lighter;
-  color: var(--blue);
-  line-height: 150%;
+  
 }
