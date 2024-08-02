@@ -1,4 +1,5 @@
 @import './fonts.css';
+@import './limitations.css';
 
 :root {
   /* Colors */
@@ -13,14 +14,15 @@
   --heading-XL: bold 4rem/110% var(--font-family);
   --heading-L: bold 3rem/110% var(--font-family);
   --heading-M: bold 1.5rem/110% var(--font-family);
-  --heading-S: bold 1.25/110% var(--font-family);
+  --heading-S: bold 1.25rem/110% var(--font-family);
   --body-M: normal 1rem/150% var(--font-family);
   --body-M-bold: bold 1rem/150% var(--font-family);
   --body-S: normal 0.875em/150% var(--font-family);
 }
 
 body {
-  font: var(--body-S);
+  margin: 0 1.5rem;
+  font: var(--body-M);
   font-weight: lighter;
-  
+  color: var(--dark-electric-blue);
 }
