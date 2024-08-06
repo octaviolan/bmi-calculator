@@ -1,11 +1,13 @@
 .limitations {
   /* outline: 1px red solid; */
-  padding: 72px 0 96px 0;
+  padding: 72px 0 96px 0; /*corregir al final*/
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(327px, 1fr)); /*Pasar a rem*/
   gap: 1rem;
 }
 
 .limitations-head {
+  margin: 0 0 2.5rem 0; 
   text-align: center;
 }
 
@@ -18,7 +20,7 @@
 }
 
 .limitations-text {
-  margin: 0 0 40px 0;
+  margin: 0;
 }
 
 .card {
@@ -43,4 +45,28 @@
 
 .card-text {
   margin: 1rem 0 0 0;
+}
+
+@media screen and (min-width: 768px) {
+
+  .limitations {
+    outline: 1px solid red;
+    row-gap: 1.5rem;
+  }
+
+  .limitations-head {
+    margin: 0 0 2rem 0; 
+    grid-area: 1 / 1 / 2 / 3;
+  }
+
+  .card {
+    padding: 2rem;
+  }
+
+  .card:last-child {
+    width: 365px; /*Pasar a rem*/
+    box-sizing: border-box;
+    grid-area: 4 / 1 / 5 / 3;
+    justify-self: center;
+  }
 }

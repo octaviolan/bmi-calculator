@@ -26,3 +26,9 @@ body {
   font-weight: lighter;
   color: var(--dark-electric-blue);
 }
+
+@media screen and (min-width: 768px) {
+  body {
+    margin: 0 2.5rem;
+  }
+}
