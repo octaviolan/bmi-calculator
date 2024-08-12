@@ -1,5 +1,7 @@
 @import './fonts.css';
+@import './wrapper.css';
 @import './limitations.css';
+@import './recommendations.css';
 
 :root {
   /* Colors */
@@ -21,16 +23,10 @@
 }
 
 body {
-  margin: 0 1.5rem;
+  margin: 0;
   font: var(--body-M);
   font-weight: lighter;
   color: var(--dark-electric-blue);
-}
-
-@media screen and (min-width: 768px) {
-  body {
-    margin: 0 2.5rem;
-  }
 }
 
 @media screen and (min-width: 1024px) {
