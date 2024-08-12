@@ -1,8 +1,7 @@
 .limitations {
-  /* outline: 1px red solid; */
   padding: 72px 0 96px 0; /*corregir al final*/
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(327px, 1fr)); /*Pasar a rem*/
+  grid-template-columns: repeat(auto-fill, minmax(20.5rem, 1fr)); /*Pasar a rem*/
   gap: 1rem;
 }
 
@@ -24,7 +23,6 @@
 }
 
 .card {
-  /* outline: 1px solid blue; */
   padding: 1.5rem;
   border-radius: 1rem;
   box-shadow: 1rem 2rem 3.5rem rgba(143, 174, 207, 0.25);
@@ -47,10 +45,13 @@
   margin: 1rem 0 0 0;
 }
 
+.pattern-left {
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
 
   .limitations {
-    outline: 1px solid red;
     row-gap: 1.5rem;
   }
 
@@ -63,10 +64,59 @@
     padding: 2rem;
   }
 
-  .card:last-child {
+  .race {
     width: 365px; /*Pasar a rem*/
     box-sizing: border-box;
     grid-area: 4 / 1 / 5 / 3;
     justify-self: center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+  .limitations {
+    margin: 0 auto;
+    max-width: 72.5rem;
+    grid-template-columns: repeat(12, 4.25rem);
+    grid-template-rows: 14.5rem 11.5rem 14.5rem;
+    column-gap: 1.95rem;
+    row-gap: 1.75rem;
+  }
+
+  .limitations-head {
+    text-align: left;
+    grid-area: 1 / 1 / 2 / 7;
+  }
+
+  .limitations-title {
+    font: var(--heading-L);
+  }
+
+  .gender {
+    grid-area: 1 / 8 / 2 / 12;
+  }
+
+  .muscle {
+    grid-area: 2 / 9 / 3 / 13;
+  }
+
+  .age {
+    grid-area: 2 / 5 / 3 / 9;
+  }
+
+  .pregnancy {
+    grid-area: 3 / 3 / 4 / 7;
+  }
+
+  .card.race {
+    grid-area: 3 / 7 / 4 / 11; 
+  }
+
+  .pattern-right {
+    display: block;
+    grid-area: 2 / 2 / 3 / 4;
+    background-image: url('../assets/images/pattern-curved-line-right.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
   }
 }
