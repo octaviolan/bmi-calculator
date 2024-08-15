@@ -80,7 +80,7 @@
   .limitations-content {
     margin: 0 auto;
     max-width: 72.5rem;
-    grid-template-columns: repeat(12, 4.25rem);
+    grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 14.5rem 11.5rem 14.5rem;
     column-gap: 1.95rem;
     row-gap: 1.75rem;
