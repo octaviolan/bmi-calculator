@@ -35,3 +35,19 @@
   font: var(--heading-M);
   color: var(--gun-metal);
 }
+
+@media screen and (min-width: 768px) {
+  body {
+    outline: 1px solid red;
+  }
+
+  .recommendations {
+    padding: 3.75rem 2.5rem;
+  }
+
+  .recommendations-item {
+    flex-direction: row;
+    align-items: center;
+    gap: 2.5rem;
+  }
+}
