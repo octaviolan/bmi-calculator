@@ -15,7 +15,7 @@
   --font-family: Inter, sans-serif;
   --heading-XL: bold 4rem/110% var(--font-family);
   --heading-L: bold 3rem/110% var(--font-family);
-  --heading-M: bold 1.5rem/110% var(--font-family);
+  --heading-M: bold 1.5rem/120% var(--font-family);
   --heading-S: bold 1.25rem/110% var(--font-family);
   --body-M: normal 1rem/150% var(--font-family);
   --body-M-bold: bold 1rem/150% var(--font-family);
