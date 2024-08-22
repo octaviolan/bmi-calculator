@@ -25,3 +25,30 @@
 .result-text {
   margin: 0;
 }
+
+@media screen and (min-width: 768px) {
+
+  .result-content {
+    position: relative;
+    right: 120px;
+    width: 841px;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  
+  .result-image {
+    margin: 0;
+    width: 435px;
+    height: 412px;
+  }
+
+  .result-body {
+    width: 331px;
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+
+}
