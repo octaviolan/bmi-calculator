@@ -49,6 +49,28 @@
 
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
+  .result-content {
+    border: 1px solid blue;
+    position: static;
+    width: 100%;
+    gap: 131px;
+  }
 
+  .result-image {
+    width: 564px;
+    height: auto;
+  }
+
+  .result-body {
+    position: relative;
+    bottom: 40px;
+    width: 465px;
+    align-self: flex-end;
+  }
+
+  .result-title {
+    font: var(--heading-L);
+    margin-bottom: 35px;
+  }
 }
