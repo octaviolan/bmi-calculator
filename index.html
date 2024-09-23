@@ -9,31 +9,62 @@
 </head>
 <body>
  
-  Body Mass Index Calculator
+ <header>
+  <!-- IBM Calculator -->
+    <section class="calculator">
+      <div class="wrapper">
+        <div class="calculator-content">
+          <article class="calculator-head">
+            <img src="./assets/images/icon_abstract.png" class="calculator-logo" alt="Logotipo">
+            <h1>Body Mass Index Calculator</h1>
+            <p>Better understand your weight in relation to your height using our 
+              body mass index (BM) calculator. While BMI is not the sole determinant 
+              of a healthy weight, it offers a valuable starting point to evaluate 
+              your overall health and well-being.</p>
+          </article>
+          <article class="calculator-bmi">
+            <form>
+              <div class="form-container">
+                <fieldset>
+                  <legend>Enter your details below</legend>
+                    <input type="radio" name="system" value="metric" id="metric" checked>
+                    <label for="metric">Metric</label>
+                    <input type="radio" name="system" value="imperial" id="imperial">
+                    <label for="imperial">Imperial</label>
+                </fieldset>
+                <fieldset>
+                  <article id="metric-container">
+                    <label for="height-metric">Height</label>
+                    <input type="number" id="height-metric" placeholder="0" min="0">
+                    <label for="height-metric">Weight</label>
+                    <input type="number" id="height-metric" placeholder="0" min="0">
+                  </article>
+                  
+                </fieldset>
+                <fieldset>
+                    <p>Your BMI is... <output id="bmi">23.4</output></p> 
+                    <p>
+                      Your BMI suggests you're <output id="classification">healthy weight</output>.<!-- add classification --> 
+                      Your ideal weight is between <output id="range">63.3kgs - 85.2kgs</output>. <!-- add range -->
+                    </p>
+                </fieldset>
+              </div>
+            </form>
+            
+        
+            
+        
+            
+            
+        
+          
 
-  Better understand your weight in relation to your height using our 
-  body mass index (BM) calculator. While BMI is not the sole determinant 
-  of a healthy weight, it offers a valuable starting point to evaluate 
-  your overall health and well-being.
-
-  Enter your details below
-
-  Metric
-  Imperial
-
-  Height
-  Weight
-
-  Your BMI is... -->
-
-  <!-- add score -->
-
-  Your BMI suggests you're <!-- add classification -->. 
-  Your ideal weight is between <!-- add range -->.
-
- 
-
- 
+          </article>
+    
+        </div>
+      </div>
+    </section>
+ </header>
  
   <main>
     <!-- Results -->

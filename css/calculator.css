@@ -1,0 +1,47 @@
+/*Calculator Head*/
+
+.calculator {
+  background-image: url('../assets/images/');
+}
+
+.calculator-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.calculator-head {
+  text-align: center;
+}
+
+.calculator-logo {
+  vertical-align: middle;
+}
+
+.calculator h1 {
+  font: var(--heading-L);
+  color: var(--gun-metal);
+  margin: 1.5rem 0;
+}
+
+.calculator p {
+  margin: 0;
+}
+
+/* Calculator IBM */
+
+.calculator-bmi {
+  outline: 1px solid red;
+  padding: 1.5rem;
+  background-color: var(--pure-white);
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+fieldset {
+  padding: 0;
+}

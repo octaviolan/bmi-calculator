@@ -50,10 +50,15 @@
 }
 
 @media screen and (min-width: 1024px) {
+
+  .result {
+    margin-bottom: 96px;
+  }
+  
   .result-content {
-    border: 1px solid blue;
     position: static;
     width: 100%;
+    justify-content: center;
     gap: 131px;
   }
 

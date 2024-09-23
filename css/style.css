@@ -3,6 +3,7 @@
 @import './result.css';
 @import './limitations.css';
 @import './recommendations.css';
+@import './calculator.css';
 
 :root {
   /* Colors */
