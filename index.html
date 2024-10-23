@@ -12,6 +12,7 @@
  <header>
   <!-- IBM Calculator -->
     <section class="calculator">
+      <div class="calculator-background"></div>
       <div class="wrapper">
         <div class="calculator-content">
           <article class="calculator-head">
@@ -25,28 +26,65 @@
           <article class="calculator-bmi">
             <form>
               <div class="form-container">
-                <fieldset>
+                <fieldset class="form-section">
                   <legend>Enter your details below</legend>
-                    <input type="radio" name="system" value="metric" id="metric" checked>
-                    <label for="metric">Metric</label>
-                    <input type="radio" name="system" value="imperial" id="imperial">
-                    <label for="imperial">Imperial</label>
+                    <div class="radio">
+                      <div class="radio-metric">
+                        <input type="radio" name="system" value="metric" id="metric" checked>
+                        <label for="metric">Metric</label>
+                      </div>
+                      <div class="radio-imperial">
+                        <input type="radio" name="system" value="imperial" id="imperial">
+                        <label for="imperial">Imperial</label>
+                      </div>
+                    </div>
                 </fieldset>
-                <fieldset>
-                  <article id="metric-container">
-                    <label for="height-metric">Height</label>
-                    <input type="number" id="height-metric" placeholder="0" min="0">
-                    <label for="height-metric">Weight</label>
-                    <input type="number" id="height-metric" placeholder="0" min="0">
+
+                <fieldset class="form-section input-section">
+                  <article id="metric">
+                    <div class="input-item">
+                      <label for="height-metric" class="label">Height</label>
+                      <div class="input-container">
+                        <input type="number" id="height-metric" placeholder="0" min="0">
+                      </div>
+                    </div>
+                    <div class="input-item">
+                      <label for="weight-metric" class="label">Weight</label>
+                      <div class="input-container">
+                        <input type="number" id="weight-metric" placeholder="0" min="0">
+                      </div>
+                    </div>
+                  </article>
+                  <article id="imperial">
+                    <div class="input-item">
+                      <label for="" class="label">Height</label>
+                        <div class="input-container">
+                          <input type="number" id="" placeholder="0" min="0">
+                          <input type="number" id="" placeholder="0" min="0">
+                        </div>
+                    </div>
+                    <div class="input-item">
+                      <label for="" class="label">Weight</label>
+                      <div class="input-container">
+                        <input type="number" id="" placeholder="0" min="0">
+                        <input type="number" id="" placeholder="0" min="0">
+                      </div>
+                    </div>
                   </article>
                   
                 </fieldset>
-                <fieldset>
+                <fieldset class="form-section output-section">
+                  <div class="welcome">
+                    <h3>Welcome!</h3>
+                    <p>Enter your height and weight and you’ll see your BMI result here</p>
+                  </div>
+                  <div class="output-container hide">
                     <p>Your BMI is... <output id="bmi">23.4</output></p> 
                     <p>
-                      Your BMI suggests you're <output id="classification">healthy weight</output>.<!-- add classification --> 
-                      Your ideal weight is between <output id="range">63.3kgs - 85.2kgs</output>. <!-- add range -->
+                      Your BMI suggests you're a <output id="classification">healthy weight</output>.<!-- add classification --> 
+                      Your ideal weight is between <strong><output id="range">63.3kgs - 85.2kgs</output></strong>. <!-- add range -->
                     </p>
+                  </div>
                 </fieldset>
               </div>
             </form>

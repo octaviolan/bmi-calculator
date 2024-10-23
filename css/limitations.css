@@ -4,7 +4,7 @@
 
 .limitations-content {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20.5rem, 1fr)); /*Pasar a rem*/
+  grid-template-columns: repeat(auto-fill, minmax(20.5rem, 1fr)); 
   gap: 1rem;
 }
 

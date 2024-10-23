@@ -11,6 +11,7 @@
   --gun-metal: rgb(37, 51, 71); 
   --dark-electric-blue: rgb(94, 110, 133);
   --pure-white: rgb(255, 255, 255);
+  --linear-gradient: linear-gradient(135deg, #ffffff, rgba(214, 252, 254, 0.2), rgba(214, 230, 254, 0.2));
 
   /* Typography */
   font-size: 16px;
