@@ -102,6 +102,7 @@ header {
   border: 1px solid var(--dark-electric-blue);
   border-radius: 50%;
   vertical-align: middle;
+  outline: none;
 }
 
 .radio input[type="radio"]:hover {
@@ -137,22 +138,59 @@ header {
 }
 
 /* Section Height and Weight Inputs */
-#metric,
-#imperial {
+.metric-container,
+.imperial-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
+
 .input-item {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.input-container {
+.input-container,
+.input-container div {
+  position: relative;
+  width: 100%;
   display: flex;
   gap: 1rem;
 }
+.input-container::after,
+.input-container div::after {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  font: var(--heading-M);
+  color: var(--blue);
+}
+
+#metric .input-item:nth-child(1) .input-container::after{
+  content: 'cm';
+}
+
+#metric .input-item:nth-child(2) .input-container::after{
+  content: 'kg';
+}
+
+#imperial .input-item:nth-child(1) .input-container div:nth-child(1)::after{
+  content: 'ft';
+}
+
+#imperial .input-item:nth-child(1) .input-container div:nth-child(2)::after{
+  content: 'in';
+}
+
+#imperial .input-item:nth-child(2) .input-container div:nth-child(1)::after{
+  content: 'st';
+}
+
+#imperial .input-item:nth-child(2) .input-container div:nth-child(2)::after{
+  content: 'lbs';
+}
+
 
 .label {
   font: var(--body-S);
@@ -177,6 +215,8 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"]:hover {
   border: 1px solid var(--blue);
 }
+
+
 
 /* Output Section */
 .output-section {
@@ -217,4 +257,46 @@ input[type="number"]:hover {
 
 .hide {
   display: none;
+}
+
+@media screen and (min-width: 768px) {
+
+  .calculator h1 {
+    width: 380px;
+    margin: 40px auto 24px auto;
+  }
+
+  .calculator-bmi {
+    padding: 2rem;
+  }
+
+  .form-container {
+    gap: 2rem;
+  }
+
+  .form-section legend {
+    margin-bottom: 2rem;
+  }
+
+  .metric-container {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .input-item {
+    flex-grow: 1;
+  }
+
+  .output-section {
+    border-radius: 13rem 62.5rem 62.5rem 13rem;
+  }
+
+  .output-container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .output-container p {
+    flex-basis: 16.7rem;
+  }
 }
