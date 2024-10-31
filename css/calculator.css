@@ -262,7 +262,7 @@ input[type="number"]:hover {
 @media screen and (min-width: 768px) {
 
   .calculator h1 {
-    width: 380px;
+    width: 23.75rem;
     margin: 40px auto 24px auto;
   }
 
@@ -298,5 +298,57 @@ input[type="number"]:hover {
 
   .output-container p {
     flex-basis: 16.7rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  header {
+    margin-bottom: 1.25rem;
+  }
+
+  .calculator-background {
+    left: 1.5rem;
+    width: 68%;
+    height: 46rem;
+  }
+
+  .calculator-content {
+    padding-top: 4.625rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 6.624rem 37.875rem;
+    row-gap: 0;
+  }
+  
+  .calculator-head {
+    text-align: left;
+  }
+
+  .calculator-logo {
+    width: 4rem;
+  }
+
+  .calculator-head h1 {
+    margin: 8.25rem 0 2.125rem 0;
+    font: var(--heading-XL);
+    width: 32rem;
+  }
+
+  .calculator-head p {
+    width: 29rem;
+  }
+
+  .calculator-bmi {
+    grid-area: 2 / 2;
+    align-self: start;
+  }
+
+  .output-container {
+    gap: 3rem;
+  }
+
+  .welcome p{
+    font: var(--body-S);
   }
 }
