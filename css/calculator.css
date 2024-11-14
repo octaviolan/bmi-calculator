@@ -301,7 +301,7 @@ input[type="number"]:hover {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
 
   header {
     margin-bottom: 1.25rem;
@@ -342,6 +342,10 @@ input[type="number"]:hover {
   .calculator-bmi {
     grid-area: 2 / 2;
     align-self: start;
+  }
+
+  .input-container {
+    gap: 1.5rem;
   }
 
   .output-container {
