@@ -84,14 +84,9 @@ class Metric extends Units {
   getBmiMetric() {
     const [cm, kg] = this.elements;
 
-    if (cm.value !== "" && kg.value !== "") {
+    if (this.elements.every(input => input.value !== '')) {
       const bmiMetric = kg.value / Math.pow(cm.value / 100, 2);
       const bmiMetricFixed = bmiMetric.toFixed(1);
-      console.log({
-        cm: cm.value,
-        kg: kg.value,
-        bmiMetric: bmiMetric.toFixed(1),
-      });
 
       this.showBmi(bmiMetricFixed);
       this.weightClassification(bmiMetricFixed);
@@ -105,6 +100,24 @@ class Imperial extends Units {
   constructor() {
     super();
     this.elements = this.getElements("imperial");
+
+    this.elements.forEach((element) => {
+      element.addEventListener('input', this.getBmiImperial.bind(this));
+    })
+    
+  }
+  getBmiImperial() {
+    const [ft, pulg, st, lbs] = this.elements;
+    
+    if (this.elements.every(input => input.value !== '')) {
+      const bmiHeight = (Number(st.value * 14) + Number(lbs.value)) * 703;
+      const bmiImperial =  bmiHeight / Math.pow((Number(ft.value * 12) + Number(pulg.value)), 2);
+      const bmiImperialFixed = bmiImperial.toFixed(1);
+      
+      this.showBmi(bmiImperialFixed);
+      this.weightClassification(bmiImperialFixed);
+    }
+  
   }
 }
 
