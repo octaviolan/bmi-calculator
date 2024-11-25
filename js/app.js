@@ -51,23 +51,47 @@ class Units {
       document.getElementById("classification").textContent = "Underweight";
     }
   }
-  healthyWeight(height) {
+  healthyWeight(height, type) {
     //Bmi minimo y maximo
     const lowerBmi = 18.5;
     const upperBmi = 25;
 
-    //Formula que calcula el peso minimo y maximo
-    const lowerWeight = lowerBmi * Math.pow(height / 100, 2);
-    const upperWeight = upperBmi * Math.pow(height / 100, 2);
+    let lowerWeight, upperWeight;
 
-    //Redondear peso a un decimal
-    const lowerWeightFixed = lowerWeight.toFixed(1);
-    const upperWeightFixed = upperWeight.toFixed(1);
+    if (type === "metric") {
+      //Formula que calcula el peso minimo y maximo para unidad metrico decimal
+      const lowerWeightFormulaMetric = lowerBmi * Math.pow(height / 100, 2);
+      const upperWeightFormulaMetric = upperBmi * Math.pow(height / 100, 2);
+
+      //Peso ideal a 3 cifras significativas
+      const lowerWeightFixed = lowerWeightFormulaMetric.toFixed(1);
+      const upperWeightFixed = upperWeightFormulaMetric.toFixed(1);
+
+      //Magnitud con su unidad de medida metric
+      lowerWeight = `${lowerWeightFixed}kg`;
+      upperWeight = `${upperWeightFixed}kg`;
+    } else {
+      //Convertir a libras con la formula sistema Imperial
+      const lowerWeightFormulaImperial = (lowerBmi * height) / 703;
+      const upperWeightFormulaImperial = (upperBmi * height) / 703;
+
+      //Convertir a Stone
+      const lowerStone = Math.floor(lowerWeightFormulaImperial / 14);
+      const upperStone = Math.floor(upperWeightFormulaImperial / 14);
+
+      //Convertir el resto a libras
+      const lowerLbs = Math.floor(lowerWeightFormulaImperial % 14);
+      const upperLbs = Math.floor(upperWeightFormulaImperial % 14);
+
+      //Magnitud con su unidad de medida Imperial
+      lowerWeight = `${lowerStone}st ${lowerLbs}lbs`;
+      upperWeight = `${upperStone}st ${upperLbs}Lbs`;
+    }
 
     //Mostar los resultados en el DOM
     document.getElementById(
       "range"
-    ).textContent = `${lowerWeightFixed}kgs - ${upperWeightFixed}kgs`;
+    ).textContent = `${lowerWeight} - ${upperWeight}`; //condicional ternario
   }
 }
 
@@ -84,13 +108,13 @@ class Metric extends Units {
   getBmiMetric() {
     const [cm, kg] = this.elements;
 
-    if (this.elements.every(input => input.value !== '')) {
+    if (this.elements.every((input) => input.value !== "")) {
       const bmiMetric = kg.value / Math.pow(cm.value / 100, 2);
       const bmiMetricFixed = bmiMetric.toFixed(1);
 
       this.showBmi(bmiMetricFixed);
       this.weightClassification(bmiMetricFixed);
-      this.healthyWeight(cm.value);
+      this.healthyWeight(cm.value, "metric");
     }
   }
 }
@@ -102,22 +126,25 @@ class Imperial extends Units {
     this.elements = this.getElements("imperial");
 
     this.elements.forEach((element) => {
-      element.addEventListener('input', this.getBmiImperial.bind(this));
-    })
-    
+      element.addEventListener("input", this.getBmiImperial.bind(this));
+    });
   }
   getBmiImperial() {
     const [ft, pulg, st, lbs] = this.elements;
-    
-    if (this.elements.every(input => input.value !== '')) {
-      const bmiHeight = (Number(st.value * 14) + Number(lbs.value)) * 703;
-      const bmiImperial =  bmiHeight / Math.pow((Number(ft.value * 12) + Number(pulg.value)), 2);
+
+    if (this.elements.every((input) => input.value !== "")) {
+      const heightImperial = Math.pow(
+        Number(ft.value * 12) + Number(pulg.value),
+        2
+      );
+      const bmiImperial =
+        ((Number(st.value * 14) + Number(lbs.value)) * 703) / heightImperial;
       const bmiImperialFixed = bmiImperial.toFixed(1);
-      
+
       this.showBmi(bmiImperialFixed);
       this.weightClassification(bmiImperialFixed);
+      this.healthyWeight(heightImperial, "imperial");
     }
-  
   }
 }
 
